@@ -362,13 +362,13 @@
             <div class="rv">
                 <p class="sec-tag">sobre mí</p>
                 <h2 class="sec-title">Construyo cosas<br>para la web</h2>
-                <p>Soy un Desarrollador Fullstack de Colombia apasionado por crear aplicaciones web que combinen funcionalidad sólida con experiencias de usuario memorables.</p>
-                <p>Trabajo en la <strong style="color:var(--text)">U.D.C.A</strong> construyendo sistemas internos y herramientas digitales con Angular en el frontend y Node.js + PostgreSQL en el backend.</p>
+                <p>Desarrollador Fullstack de Colombia con experiencia en diseño, desarrollo e implementación de aplicaciones web, sistemas institucionales, dashboards analíticos y APIs REST.</p>
+                <p>Trabajo en la <strong style="color:var(--text)">U.D.C.A</strong> en la evolución del <strong style="color:var(--purple-l)">Sistema de Información Institucional (SII)</strong>, con autenticación <strong style="color:var(--text)">Azure AD</strong>, dashboards en <strong style="color:var(--text)">Power BI</strong> y visualizaciones con Chart.js.</p>
                 <p>Me interesa especialmente la integración de <strong style="color:var(--purple-l)">inteligencia artificial</strong> en aplicaciones de negocio y el diseño de interfaces que sean tanto hermosas como funcionales.</p>
                 <div class="stats">
-                    <div class="stat"><span class="stat-n" data-target="2">0</span><span class="stat-l">Años de experiencia</span></div>
-                    <div class="stat"><span class="stat-n" data-target="7">0</span><span class="stat-l">Proyectos completados</span></div>
-                    <div class="stat"><span class="stat-n" data-target="8">0</span><span class="stat-l">Tecnologías dominadas</span></div>
+                    <div class="stat"><span class="stat-n" data-target="1">0</span><span class="stat-l">Año de experiencia</span></div>
+                    <div class="stat"><span class="stat-n" data-target="4">0</span><span class="stat-l">Proyectos destacados</span></div>
+                    <div class="stat"><span class="stat-n" data-target="10">0</span><span class="stat-l">Tecnologías dominadas</span></div>
                 </div>
             </div>
         </div>
@@ -407,7 +407,9 @@
             <div class="chip"><i class="devicon-git-plain colored"></i><span>Git</span></div>
             <div class="chip"><i class="devicon-github-original" style="color:#e8edf4"></i><span>GitHub</span></div>
             <div class="chip"><i class="bi bi-triangle-fill" style="color:#fff;font-size:1.4rem"></i><span>Vercel</span></div>
-            <div class="chip"><i class="bi bi-database-fill" style="color:var(--cyan);font-size:1.75rem"></i><span>Neon DB</span></div>
+            <div class="chip"><i class="devicon-azure-plain colored"></i><span>Azure AD</span></div>
+            <div class="chip"><i class="bi bi-bar-chart-fill" style="color:#F2C811;font-size:1.75rem"></i><span>Power BI</span></div>
+            <div class="chip"><i class="bi bi-pie-chart-fill" style="color:#FF6384;font-size:1.75rem"></i><span>Chart.js</span></div>
         </div>
     </div>
 </section>
@@ -476,11 +478,61 @@
                 </div>
             </div>
 
+            <!-- Task Manager API -->
+            <div class="proj-card rv">
+                <div class="proj-preview">
+                    <div class="pbg" style="background:linear-gradient(135deg,#0a1628,#0d2137,#0a1e2e)"></div>
+                    <div class="pcon">
+                        <div class="picon" style="background:linear-gradient(135deg,#0ea5e9,#0284c7);font-size:1.5rem">⚙</div>
+                        <span class="plabel">Task Manager API</span>
+                    </div>
+                </div>
+                <div class="proj-info">
+                    <p class="proj-tag">Backend · REST API · JWT</p>
+                    <h3 class="proj-name">Task Manager API</h3>
+                    <p class="proj-desc">API REST para gestión de proyectos y tareas con autenticación JWT, cifrado de contraseñas, CRUD completo y control de acceso por propietario y colaboradores.</p>
+                    <div class="tech-wrap">
+                        <span class="ttag">Node.js</span><span class="ttag">Express</span>
+                        <span class="ttag">PostgreSQL</span><span class="ttag">JWT</span><span class="ttag">bcrypt</span>
+                    </div>
+                    <div class="proj-links">
+                        <a href="https://github.com/Sneider4/task-manager-api" target="_blank" rel="noopener" class="pl pri">
+                            <i class="bi bi-github"></i> Ver repositorio
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard Económico -->
+            <div class="proj-card rv">
+                <div class="proj-preview">
+                    <div class="pbg" style="background:linear-gradient(135deg,#0a1a0a,#0d2010,#0a180d)"></div>
+                    <div class="pcon">
+                        <div class="picon" style="background:linear-gradient(135deg,#22c55e,#16a34a);font-size:1.5rem">📊</div>
+                        <span class="plabel">Dashboard Económico</span>
+                    </div>
+                </div>
+                <div class="proj-info">
+                    <p class="proj-tag">Analytics · Chart.js · APIs Públicas</p>
+                    <h3 class="proj-name">Dashboard Económico Global</h3>
+                    <p class="proj-desc">Dashboard interactivo de indicadores económicos mundiales con KPIs, gráficas dinámicas y comparativas entre países. Consume APIs públicas del Banco Mundial sin API key.</p>
+                    <div class="tech-wrap">
+                        <span class="ttag">Angular 21</span><span class="ttag">Chart.js</span>
+                        <span class="ttag">Bootstrap</span><span class="ttag">TypeScript</span>
+                    </div>
+                    <div class="proj-links">
+                        <a href="https://github.com/Sneider4/economic-dashboard" target="_blank" rel="noopener" class="pl pri">
+                            <i class="bi bi-github"></i> Ver repositorio
+                        </a>
+                    </div>
+                </div>
+            </div>
+
             <!-- More on GitHub -->
-            <div class="proj-card rv" style="display:flex;flex-direction:column;justify-content:center;align-items:center;padding:44px 32px;text-align:center;border-style:dashed;min-height:380px">
-                <i class="bi bi-github" style="font-size:2.8rem;color:var(--text-3);margin-bottom:18px;display:block"></i>
-                <h3 style="font-family:var(--display);font-weight:700;font-size:1.1rem;margin-bottom:10px">Más proyectos en GitHub</h3>
-                <p style="font-size:.84rem;color:var(--text-2);margin-bottom:26px;line-height:1.7">Explora todos mis repositorios con código fuente, documentación y demos en vivo.</p>
+            <div class="proj-card rv" style="display:flex;flex-direction:column;justify-content:center;align-items:center;padding:44px 32px;text-align:center;border-style:dashed;min-height:280px">
+                <i class="bi bi-github" style="font-size:2.4rem;color:var(--text-3);margin-bottom:14px;display:block"></i>
+                <h3 style="font-family:var(--display);font-weight:700;font-size:1rem;margin-bottom:8px">Más en GitHub</h3>
+                <p style="font-size:.82rem;color:var(--text-2);margin-bottom:22px;line-height:1.7">Explora todos mis repositorios con código fuente y documentación.</p>
                 <a href="https://github.com/Sneider4?tab=repositories" target="_blank" rel="noopener" class="pl sec" style="border-color:var(--border-accent)">
                     <i class="bi bi-arrow-right"></i> Ir a GitHub
                 </a>
