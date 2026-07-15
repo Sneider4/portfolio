@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portafolio de Richard Malagón — Desarrollador Fullstack Angular · Node.js · PostgreSQL">
+    <meta name="description" id="meta-desc" content="Portfolio of Richard Malagón — Fullstack Developer Angular · Node.js · PostgreSQL">
     <title>Richard Malagón | Fullstack Developer</title>
-    <link rel="icon" type="image/png" href="logo-mio.png">
+    <link rel="icon" type="image/png" href="logo-negro.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -91,6 +91,10 @@
 
         .nav-toggle { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:none; padding:4px; }
         .nav-toggle span { width:22px; height:2px; background:var(--text-2); border-radius:2px; transition:all .3s; }
+
+        .lang-toggle { display:flex; align-items:center; background:var(--surface); border:1px solid var(--border); border-radius:100px; padding:3px; gap:2px; margin-left:8px; }
+        .lang-opt { border:none; background:none; cursor:none; padding:5px 12px; border-radius:100px; font-family:var(--mono); font-size:.72rem; font-weight:600; color:var(--text-2); transition:background .2s,color .2s; }
+        .lang-opt.active { background:var(--gradient); color:#fff; }
 
         /* HERO */
         #hero { position:relative; min-height:100vh; display:flex; align-items:center; padding:0 clamp(20px,5vw,80px); overflow:hidden; }
@@ -277,12 +281,16 @@
             <span class="logo-name">Richard Malagón</span>
         </a>
         <ul class="nav-links" id="nav-links">
-            <li><a href="#about">Sobre mí</a></li>
+            <li><a href="#about" data-i18n="navAbout">About</a></li>
             <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Proyectos</a></li>
-            <li><a href="#contact">Contacto</a></li>
+            <li><a href="#projects" data-i18n="navProjects">Projects</a></li>
+            <li><a href="#contact" data-i18n="navContact">Contact</a></li>
         </ul>
-        <a href="#contact" class="nav-cta">Trabajemos juntos →</a>
+        <div class="lang-toggle" id="lang-toggle" role="group" aria-label="Language / Idioma">
+            <button type="button" class="lang-opt active" data-lang="en">EN</button>
+            <button type="button" class="lang-opt" data-lang="es">ES</button>
+        </div>
+        <a href="#contact" class="nav-cta" data-i18n="navCta">Let's work together →</a>
         <button class="nav-toggle" id="ntoggle" aria-label="Menu">
             <span></span><span></span><span></span>
         </button>
@@ -295,19 +303,22 @@
     <div class="hero-wrap">
         <div>
             <div class="hero-badge rv">
-                <span class="badge-dot"></span> Disponible para proyectos
+                <span class="badge-dot"></span> <span data-i18n="heroBadge">Available for projects</span>
             </div>
             <h1 class="hero-name rv">Richard<br>Malagón</h1>
             <div class="typewriter-wrap rv">&gt;&nbsp;<span id="tw"></span><span class="tblink"></span></div>
-            <p class="hero-desc rv">
-                Desarrollador Fullstack especializado en construir aplicaciones web modernas,
-                escalables y con experiencias de usuario memorables.
-                Basado en Colombia 🇨🇴, trabajando con Angular · Node.js · PostgreSQL.
+            <p class="hero-desc rv" data-i18n="heroDesc">
+                Fullstack Developer specialized in building modern, scalable web applications
+                with memorable user experiences.
+                Based in Colombia 🇨🇴, working with Angular · Node.js · PostgreSQL.
             </p>
             <div class="hero-actions rv">
-                <a href="#projects" class="btn-p">Ver proyectos</a>
-                <a href="cv.pdf" download="Richard_Malagon_CV.pdf" class="btn-g">
-                    <i class="bi bi-download"></i> Descargar CV
+                <a href="#projects" class="btn-p" data-i18n="btnProjects">View projects</a>
+                <a href="RICHARD_MALAGON_CV2_INGLES.pdf" download="Richard_Malagon_CV_EN.pdf" class="btn-g">
+                    <i class="bi bi-download"></i> CV (English)
+                </a>
+                <a href="RICHARD_MALAGON_CV2.pdf" download="Richard_Malagon_CV_ES.pdf" class="btn-g">
+                    <i class="bi bi-download"></i> CV (Español)
                 </a>
             </div>
             <div class="hero-socials rv">
@@ -361,15 +372,15 @@
                 </div>
             </div>
             <div class="rv">
-                <p class="sec-tag">sobre mí</p>
-                <h2 class="sec-title">Construyo cosas<br>para la web</h2>
-                <p>Desarrollador Fullstack de Colombia con experiencia en diseño, desarrollo e implementación de aplicaciones web, sistemas institucionales, dashboards analíticos y APIs REST.</p>
-                <p>Trabajo en la <strong style="color:var(--text)">U.D.C.A</strong> en la evolución del <strong style="color:var(--purple-l)">Sistema de Información Institucional (SII)</strong>, con autenticación <strong style="color:var(--text)">Azure AD</strong>, dashboards y visualizaciones con Chart.js.</p>
-                <p>Me interesa especialmente la integración de <strong style="color:var(--purple-l)">inteligencia artificial</strong> en aplicaciones de negocio y el diseño de interfaces que sean tanto hermosas como funcionales.</p>
+                <p class="sec-tag" data-i18n="aboutTag">about me</p>
+                <h2 class="sec-title" data-i18n-html="aboutTitle">I build things<br>for the web</h2>
+                <p data-i18n="aboutP1">Fullstack Developer from Colombia with experience in design, development and implementation of web applications, institutional systems, analytics dashboards and REST APIs.</p>
+                <p data-i18n-html="aboutP2">I work at <strong style="color:var(--text)">U.D.C.A</strong> on the evolution of the <strong style="color:var(--purple-l)">Institutional Information System (SII)</strong>, with <strong style="color:var(--text)">Azure AD</strong> authentication, dashboards and visualizations with Chart.js.</p>
+                <p data-i18n-html="aboutP3">I'm especially interested in integrating <strong style="color:var(--purple-l)">artificial intelligence</strong> into business applications and designing interfaces that are both beautiful and functional.</p>
                 <div class="stats">
-                    <div class="stat"><span class="stat-n" data-target="2">0</span><span class="stat-l">Año de experiencia</span></div>
-                    <div class="stat"><span class="stat-n" data-target="7">0</span><span class="stat-l">Proyectos destacados</span></div>
-                    <div class="stat"><span class="stat-n" data-target="10">0</span><span class="stat-l">Tecnologías dominadas</span></div>
+                    <div class="stat"><span class="stat-n" data-target="2">0</span><span class="stat-l" data-i18n="statYears">Year of experience</span></div>
+                    <div class="stat"><span class="stat-n" data-target="7">0</span><span class="stat-l" data-i18n="statProjects">Featured projects</span></div>
+                    <div class="stat"><span class="stat-n" data-target="10">0</span><span class="stat-l" data-i18n="statTech">Technologies mastered</span></div>
                 </div>
             </div>
         </div>
@@ -380,9 +391,9 @@
 <div class="divider"></div>
 <section id="skills">
     <div class="sec">
-        <p class="sec-tag rv">tecnologías</p>
-        <h2 class="sec-title rv">Mi stack</h2>
-        <p class="sec-sub rv">Las herramientas que uso para construir productos de principio a fin.</p>
+        <p class="sec-tag rv" data-i18n="skillsTag">technologies</p>
+        <h2 class="sec-title rv" data-i18n="skillsTitle">My stack</h2>
+        <p class="sec-sub rv" data-i18n="skillsSub">The tools I use to build products from start to finish.</p>
 
         <p class="cat-label rv">Frontend</p>
         <div class="skills-grid rv">
@@ -403,7 +414,7 @@
             <div class="chip"><i class="bi bi-robot" style="color:var(--purple-l);font-size:1.75rem"></i><span>Gemini AI</span></div>
         </div>
 
-        <p class="cat-label rv">Herramientas & Deploy</p>
+        <p class="cat-label rv" data-i18n="skillsCatTools">Tools & Deploy</p>
         <div class="skills-grid rv">
             <div class="chip"><i class="devicon-git-plain colored"></i><span>Git</span></div>
             <div class="chip"><i class="devicon-github-original" style="color:#e8edf4"></i><span>GitHub</span></div>
@@ -419,9 +430,9 @@
 <div class="divider"></div>
 <section id="projects" style="background:var(--bg-2)">
     <div class="sec">
-        <p class="sec-tag rv">proyectos</p>
-        <h2 class="sec-title rv">Trabajo destacado</h2>
-        <p class="sec-sub rv">Proyectos construidos de cero, desde la arquitectura hasta el deploy en producción.</p>
+        <p class="sec-tag rv" data-i18n="projTag">projects</p>
+        <h2 class="sec-title rv" data-i18n="projTitle">Featured work</h2>
+        <p class="sec-sub rv" data-i18n="projSub">Projects built from scratch, from architecture to production deployment.</p>
 
         <div class="proj-grid">
 
@@ -435,9 +446,9 @@
                     </div>
                 </div>
                 <div class="proj-info">
-                    <p class="proj-tag">SaaS Multi-tenant · Microservicios</p>
+                    <p class="proj-tag" data-i18n="migTag">SaaS Multi-tenant · Microservices</p>
                     <h3 class="proj-name">Migaja SaaS</h3>
-                    <p class="proj-desc">Plataforma SaaS multi-tenant para gestión de panaderías: inventario, punto de venta, pedidos, clientes, caja, gastos y reportes. Arquitectura de 9 microservicios NestJS + API gateway sobre Redis (RPC) y RabbitMQ (eventos), con PostgreSQL y Row Level Security para aislamiento de datos por tenant.</p>
+                    <p class="proj-desc" data-i18n="migDesc">Multi-tenant SaaS platform for bakery management: inventory, point of sale, orders, customers, cash register, expenses and reports. Architecture of 9 NestJS microservices + API gateway over Redis (RPC) and RabbitMQ (events), with PostgreSQL and Row Level Security for per-tenant data isolation.</p>
                     <div class="tech-wrap">
                         <span class="ttag">NestJS</span><span class="ttag">Angular 21</span>
                         <span class="ttag">PostgreSQL</span><span class="ttag">Redis</span>
@@ -445,7 +456,7 @@
                     </div>
                     <div class="proj-links">
                         <a href="https://github.com/Sneider4/migaja-saas" target="_blank" rel="noopener" class="pl pri">
-                            <i class="bi bi-github"></i> Ver repositorio
+                            <i class="bi bi-github"></i> <span data-i18n="btnRepo">View repository</span>
                         </a>
                     </div>
                 </div>
@@ -461,9 +472,9 @@
                     </div>
                 </div>
                 <div class="proj-info">
-                    <p class="proj-tag">SaaS · CRM · IA</p>
+                    <p class="proj-tag" data-i18n="cpTag">SaaS · CRM · AI</p>
                     <h3 class="proj-name">ClientPulse AI</h3>
-                    <p class="proj-desc">Plataforma SaaS multicliente para gestión de soporte con inteligencia artificial. Panel admin, módulos por cliente, agentes, métricas y respuestas generadas con Gemini AI. <strong style="color:var(--purple-l)">Proyecto en desarrollo activo</strong> — disponible una demo funcional.</p>
+                    <p class="proj-desc" data-i18n-html="cpDesc">Multi-client SaaS platform for support management with artificial intelligence. Admin panel, per-client modules, agents, metrics and responses generated with Gemini AI. <strong style="color:var(--purple-l)">Actively in development</strong> — a working demo is available.</p>
                     <div class="tech-wrap">
                         <span class="ttag">Angular</span><span class="ttag">Node.js</span>
                         <span class="ttag">PostgreSQL</span><span class="ttag">Gemini AI</span>
@@ -471,7 +482,7 @@
                     </div>
                     <div class="proj-links">
                         <a href="https://clientpulse-ai-seven.vercel.app" target="_blank" rel="noopener" class="pl pri">
-                            <i class="bi bi-box-arrow-up-right"></i> Ver demo
+                            <i class="bi bi-box-arrow-up-right"></i> <span data-i18n="btnDemo">View demo</span>
                         </a>
                         <a href="https://github.com/Sneider4/clientpulse-ai" target="_blank" rel="noopener" class="pl sec">
                             <i class="bi bi-github"></i> GitHub
@@ -492,7 +503,7 @@
                 <div class="proj-info">
                     <p class="proj-tag">Sports · Analytics · API Real-time</p>
                     <h3 class="proj-name">Mundial 2026</h3>
-                    <p class="proj-desc">Dashboard de estadísticas del FIFA World Cup 2026 con KPIs en tiempo real, gráficas con Chart.js, tabla de goleadores, grupos, fixture completo y bracket eliminatorio. Proxy serverless en Vercel.</p>
+                    <p class="proj-desc" data-i18n="mdDesc">FIFA World Cup 2026 statistics dashboard with real-time KPIs, Chart.js graphs, top scorers table, groups, full fixture and elimination bracket. Serverless proxy on Vercel.</p>
                     <div class="tech-wrap">
                         <span class="ttag">Angular 21</span><span class="ttag">Signals</span>
                         <span class="ttag">Chart.js</span><span class="ttag">Bootstrap 5</span>
@@ -500,7 +511,7 @@
                     </div>
                     <div class="proj-links">
                         <a href="https://mundial-2026-gold.vercel.app" target="_blank" rel="noopener" class="pl pri">
-                            <i class="bi bi-box-arrow-up-right"></i> Ver demo
+                            <i class="bi bi-box-arrow-up-right"></i> <span data-i18n="btnDemo">View demo</span>
                         </a>
                         <a href="https://github.com/Sneider4/mundial-2026" target="_blank" rel="noopener" class="pl sec">
                             <i class="bi bi-github"></i> GitHub
@@ -521,14 +532,14 @@
                 <div class="proj-info">
                     <p class="proj-tag">Backend · REST API · JWT</p>
                     <h3 class="proj-name">Task Manager API</h3>
-                    <p class="proj-desc">API REST para gestión de proyectos y tareas con autenticación JWT, cifrado de contraseñas, CRUD completo y control de acceso por propietario y colaboradores.</p>
+                    <p class="proj-desc" data-i18n="tmDesc">REST API for project and task management with JWT authentication, password hashing, full CRUD and access control by owner and collaborators.</p>
                     <div class="tech-wrap">
                         <span class="ttag">Node.js</span><span class="ttag">Express</span>
                         <span class="ttag">PostgreSQL</span><span class="ttag">JWT</span><span class="ttag">bcrypt</span>
                     </div>
                     <div class="proj-links">
                         <a href="https://github.com/Sneider4/task-manager-api" target="_blank" rel="noopener" class="pl pri">
-                            <i class="bi bi-github"></i> Ver repositorio
+                            <i class="bi bi-github"></i> <span data-i18n="btnRepo">View repository</span>
                         </a>
                     </div>
                 </div>
@@ -544,16 +555,16 @@
                     </div>
                 </div>
                 <div class="proj-info">
-                    <p class="proj-tag">Analytics · Chart.js · APIs Públicas</p>
-                    <h3 class="proj-name">Dashboard Económico Global</h3>
-                    <p class="proj-desc">Dashboard interactivo de indicadores económicos mundiales con KPIs, gráficas dinámicas y comparativas entre países. Consume APIs públicas del Banco Mundial sin API key.</p>
+                    <p class="proj-tag" data-i18n="dbTag">Analytics · Chart.js · Public APIs</p>
+                    <h3 class="proj-name" data-i18n="dbName">Global Economic Dashboard</h3>
+                    <p class="proj-desc" data-i18n="dbDesc">Interactive dashboard of global economic indicators with KPIs, dynamic charts and country comparisons. Consumes World Bank public APIs, no API key required.</p>
                     <div class="tech-wrap">
                         <span class="ttag">Angular 21</span><span class="ttag">Chart.js</span>
                         <span class="ttag">Bootstrap</span><span class="ttag">TypeScript</span>
                     </div>
                     <div class="proj-links">
                         <a href="https://github.com/Sneider4/economic-dashboard" target="_blank" rel="noopener" class="pl pri">
-                            <i class="bi bi-github"></i> Ver repositorio
+                            <i class="bi bi-github"></i> <span data-i18n="btnRepo">View repository</span>
                         </a>
                     </div>
                 </div>
@@ -562,10 +573,10 @@
             <!-- More on GitHub -->
             <div class="proj-card rv" style="display:flex;flex-direction:column;justify-content:center;align-items:center;padding:44px 32px;text-align:center;border-style:dashed;min-height:280px">
                 <i class="bi bi-github" style="font-size:2.4rem;color:var(--text-3);margin-bottom:14px;display:block"></i>
-                <h3 style="font-family:var(--display);font-weight:700;font-size:1rem;margin-bottom:8px">Más en GitHub</h3>
-                <p style="font-size:.82rem;color:var(--text-2);margin-bottom:22px;line-height:1.7">Explora todos mis repositorios con código fuente y documentación.</p>
+                <h3 style="font-family:var(--display);font-weight:700;font-size:1rem;margin-bottom:8px" data-i18n="moreTitle">More on GitHub</h3>
+                <p style="font-size:.82rem;color:var(--text-2);margin-bottom:22px;line-height:1.7" data-i18n="moreDesc">Explore all my repositories with source code and documentation.</p>
                 <a href="https://github.com/Sneider4?tab=repositories" target="_blank" rel="noopener" class="pl sec" style="border-color:var(--border-accent)">
-                    <i class="bi bi-arrow-right"></i> Ir a GitHub
+                    <i class="bi bi-arrow-right"></i> <span data-i18n="moreBtn">Go to GitHub</span>
                 </a>
             </div>
 
@@ -578,10 +589,10 @@
 <section id="contact">
     <div class="sec">
         <div class="contact-in">
-            <p class="sec-tag rv" style="justify-content:center">contacto</p>
-            <h2 class="sec-title rv" style="font-size:clamp(2rem,5vw,3.4rem)">¿Tienes un proyecto<br>en mente?</h2>
-            <p class="sec-sub rv" style="margin:0 auto;text-align:center">
-                Estoy disponible para proyectos freelance, colaboraciones y oportunidades laborales. No dudes en escribirme.
+            <p class="sec-tag rv" style="justify-content:center" data-i18n="contactTag">contact</p>
+            <h2 class="sec-title rv" style="font-size:clamp(2rem,5vw,3.4rem)" data-i18n-html="contactTitle">Have a project<br>in mind?</h2>
+            <p class="sec-sub rv" style="margin:0 auto;text-align:center" data-i18n="contactSub">
+                I'm available for freelance projects, collaborations and job opportunities. Feel free to reach out.
             </p>
             <br>
             <a href="mailto:malagonrichar13@gmail.com" class="contact-email rv">
@@ -590,11 +601,14 @@
             </a>
             <br>
             <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:4px">
-                <button class="copy-btn rv" id="copy-btn" onclick="copyEmail()">
-                    <i class="bi bi-clipboard"></i> Copiar email
+                <button class="copy-btn rv" id="copy-btn" onclick="copyEmail()" data-i18n-html="copyBtnHtml">
+                    <i class="bi bi-clipboard"></i> Copy email
                 </button>
-                <a href="cv.pdf" download="Richard_Malagon_CV.pdf" class="copy-btn rv">
-                    <i class="bi bi-file-earmark-person"></i> Descargar CV
+                <a href="RICHARD_MALAGON_CV2_INGLES.pdf" download="Richard_Malagon_CV_EN.pdf" class="copy-btn rv">
+                    <i class="bi bi-file-earmark-person"></i> CV (English)
+                </a>
+                <a href="RICHARD_MALAGON_CV2.pdf" download="Richard_Malagon_CV_ES.pdf" class="copy-btn rv">
+                    <i class="bi bi-file-earmark-person"></i> CV (Español)
                 </a>
             </div>
             <div class="contact-socs rv">
@@ -609,11 +623,121 @@
 <footer>
     <div class="foot-in">
         <p>© 2026 <span style="color:var(--text-2)">Richard Sneider Malagón Conde</span></p>
-        <p>Hecho con <span style="color:var(--purple)">♥</span> en Colombia 🇨🇴</p>
+        <p data-i18n-html="footerMade">Made with <span style="color:var(--purple)">♥</span> in Colombia 🇨🇴</p>
     </div>
 </footer>
 
 <script>
+// I18N
+const I18N = {
+    en: {
+        navAbout: 'About', navProjects: 'Projects', navContact: 'Contact',
+        navCta: "Let's work together →",
+        heroBadge: 'Available for projects',
+        heroDesc: `Fullstack Developer specialized in building modern, scalable web applications
+                with memorable user experiences.
+                Based in Colombia 🇨🇴, working with Angular · Node.js · PostgreSQL.`,
+        btnProjects: 'View projects',
+        aboutTag: 'about me',
+        aboutTitle: 'I build things<br>for the web',
+        aboutP1: 'Fullstack Developer from Colombia with experience in design, development and implementation of web applications, institutional systems, analytics dashboards and REST APIs.',
+        aboutP2: 'I work at <strong style="color:var(--text)">U.D.C.A</strong> on the evolution of the <strong style="color:var(--purple-l)">Institutional Information System (SII)</strong>, with <strong style="color:var(--text)">Azure AD</strong> authentication, dashboards and visualizations with Chart.js.',
+        aboutP3: 'I\'m especially interested in integrating <strong style="color:var(--purple-l)">artificial intelligence</strong> into business applications and designing interfaces that are both beautiful and functional.',
+        statYears: 'Year of experience', statProjects: 'Featured projects', statTech: 'Technologies mastered',
+        skillsTag: 'technologies', skillsTitle: 'My stack',
+        skillsSub: 'The tools I use to build products from start to finish.',
+        skillsCatTools: 'Tools & Deploy',
+        projTag: 'projects', projTitle: 'Featured work',
+        projSub: 'Projects built from scratch, from architecture to production deployment.',
+        migTag: 'SaaS Multi-tenant · Microservices',
+        migDesc: 'Multi-tenant SaaS platform for bakery management: inventory, point of sale, orders, customers, cash register, expenses and reports. Architecture of 9 NestJS microservices + API gateway over Redis (RPC) and RabbitMQ (events), with PostgreSQL and Row Level Security for per-tenant data isolation.',
+        cpTag: 'SaaS · CRM · AI',
+        cpDesc: 'Multi-client SaaS platform for support management with artificial intelligence. Admin panel, per-client modules, agents, metrics and responses generated with Gemini AI. <strong style="color:var(--purple-l)">Actively in development</strong> — a working demo is available.',
+        mdDesc: 'FIFA World Cup 2026 statistics dashboard with real-time KPIs, Chart.js graphs, top scorers table, groups, full fixture and elimination bracket. Serverless proxy on Vercel.',
+        tmDesc: 'REST API for project and task management with JWT authentication, password hashing, full CRUD and access control by owner and collaborators.',
+        dbTag: 'Analytics · Chart.js · Public APIs',
+        dbName: 'Global Economic Dashboard',
+        dbDesc: 'Interactive dashboard of global economic indicators with KPIs, dynamic charts and country comparisons. Consumes World Bank public APIs, no API key required.',
+        btnRepo: 'View repository', btnDemo: 'View demo',
+        moreTitle: 'More on GitHub',
+        moreDesc: 'Explore all my repositories with source code and documentation.',
+        moreBtn: 'Go to GitHub',
+        contactTag: 'contact',
+        contactTitle: 'Have a project<br>in mind?',
+        contactSub: "I'm available for freelance projects, collaborations and job opportunities. Feel free to reach out.",
+        copyBtnHtml: '<i class="bi bi-clipboard"></i> Copy email',
+        copyLabel: 'Copy email', copiedLabel: 'Copied!',
+        footerMade: 'Made with <span style="color:var(--purple)">♥</span> in Colombia 🇨🇴',
+        metaDesc: 'Portfolio of Richard Malagón — Fullstack Developer Angular · Node.js · PostgreSQL',
+        roles: ['Fullstack Developer','Angular · Node.js · PostgreSQL','UI/UX Enthusiast','Open to work 🚀']
+    },
+    es: {
+        navAbout: 'Sobre mí', navProjects: 'Proyectos', navContact: 'Contacto',
+        navCta: 'Trabajemos juntos →',
+        heroBadge: 'Disponible para proyectos',
+        heroDesc: `Desarrollador Fullstack especializado en construir aplicaciones web modernas,
+                escalables y con experiencias de usuario memorables.
+                Basado en Colombia 🇨🇴, trabajando con Angular · Node.js · PostgreSQL.`,
+        btnProjects: 'Ver proyectos',
+        aboutTag: 'sobre mí',
+        aboutTitle: 'Construyo cosas<br>para la web',
+        aboutP1: 'Desarrollador Fullstack de Colombia con experiencia en diseño, desarrollo e implementación de aplicaciones web, sistemas institucionales, dashboards analíticos y APIs REST.',
+        aboutP2: 'Trabajo en la <strong style="color:var(--text)">U.D.C.A</strong> en la evolución del <strong style="color:var(--purple-l)">Sistema de Información Institucional (SII)</strong>, con autenticación <strong style="color:var(--text)">Azure AD</strong>, dashboards y visualizaciones con Chart.js.',
+        aboutP3: 'Me interesa especialmente la integración de <strong style="color:var(--purple-l)">inteligencia artificial</strong> en aplicaciones de negocio y el diseño de interfaces que sean tanto hermosas como funcionales.',
+        statYears: 'Año de experiencia', statProjects: 'Proyectos destacados', statTech: 'Tecnologías dominadas',
+        skillsTag: 'tecnologías', skillsTitle: 'Mi stack',
+        skillsSub: 'Las herramientas que uso para construir productos de principio a fin.',
+        skillsCatTools: 'Herramientas & Deploy',
+        projTag: 'proyectos', projTitle: 'Trabajo destacado',
+        projSub: 'Proyectos construidos de cero, desde la arquitectura hasta el deploy en producción.',
+        migTag: 'SaaS Multi-tenant · Microservicios',
+        migDesc: 'Plataforma SaaS multi-tenant para gestión de panaderías: inventario, punto de venta, pedidos, clientes, caja, gastos y reportes. Arquitectura de 9 microservicios NestJS + API gateway sobre Redis (RPC) y RabbitMQ (eventos), con PostgreSQL y Row Level Security para aislamiento de datos por tenant.',
+        cpTag: 'SaaS · CRM · IA',
+        cpDesc: 'Plataforma SaaS multicliente para gestión de soporte con inteligencia artificial. Panel admin, módulos por cliente, agentes, métricas y respuestas generadas con Gemini AI. <strong style="color:var(--purple-l)">Proyecto en desarrollo activo</strong> — disponible una demo funcional.',
+        mdDesc: 'Dashboard de estadísticas del FIFA World Cup 2026 con KPIs en tiempo real, gráficas con Chart.js, tabla de goleadores, grupos, fixture completo y bracket eliminatorio. Proxy serverless en Vercel.',
+        tmDesc: 'API REST para gestión de proyectos y tareas con autenticación JWT, cifrado de contraseñas, CRUD completo y control de acceso por propietario y colaboradores.',
+        dbTag: 'Analytics · Chart.js · APIs Públicas',
+        dbName: 'Dashboard Económico Global',
+        dbDesc: 'Dashboard interactivo de indicadores económicos mundiales con KPIs, gráficas dinámicas y comparativas entre países. Consume APIs públicas del Banco Mundial sin API key.',
+        btnRepo: 'Ver repositorio', btnDemo: 'Ver demo',
+        moreTitle: 'Más en GitHub',
+        moreDesc: 'Explora todos mis repositorios con código fuente y documentación.',
+        moreBtn: 'Ir a GitHub',
+        contactTag: 'contacto',
+        contactTitle: '¿Tienes un proyecto<br>en mente?',
+        contactSub: 'Estoy disponible para proyectos freelance, colaboraciones y oportunidades laborales. No dudes en escribirme.',
+        copyBtnHtml: '<i class="bi bi-clipboard"></i> Copiar email',
+        copyLabel: 'Copiar email', copiedLabel: '¡Copiado!',
+        footerMade: 'Hecho con <span style="color:var(--purple)">♥</span> en Colombia 🇨🇴',
+        metaDesc: 'Portafolio de Richard Malagón — Desarrollador Fullstack Angular · Node.js · PostgreSQL',
+        roles: ['Desarrollador Fullstack','Angular · Node.js · PostgreSQL','UI/UX Enthusiast','Open to work 🚀']
+    }
+};
+
+let currentLang = localStorage.getItem('portfolio-lang') || 'en';
+
+function applyLang(lang){
+    const dict = I18N[lang];
+    document.documentElement.lang = lang;
+    document.title = 'Richard Malagón | ' + (lang === 'es' ? 'Desarrollador Fullstack' : 'Fullstack Developer');
+    document.getElementById('meta-desc').setAttribute('content', dict.metaDesc);
+    document.querySelectorAll('[data-i18n]').forEach(el => { el.textContent = dict[el.dataset.i18n]; });
+    document.querySelectorAll('[data-i18n-html]').forEach(el => { el.innerHTML = dict[el.dataset.i18nHtml]; });
+    document.querySelectorAll('.lang-opt').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+    resetTypewriter(lang);
+}
+
+function setLang(lang){
+    currentLang = lang;
+    localStorage.setItem('portfolio-lang', lang);
+    applyLang(lang);
+}
+
+document.getElementById('lang-toggle').addEventListener('click', e => {
+    const btn = e.target.closest('.lang-opt');
+    if (btn) setLang(btn.dataset.lang);
+});
+
 // CURSOR
 const dot  = document.getElementById('cur-dot');
 const ring = document.getElementById('cur-ring');
@@ -686,15 +810,20 @@ function frame(){
 frame();
 
 // TYPEWRITER
-const roles=['Desarrollador Fullstack','Angular · Node.js · PostgreSQL','UI/UX Enthusiast','Open to work 🚀'];
-let ri=0,ci=0,del=false,twEl=document.getElementById('tw');
-function tw(){
+let roles=I18N[currentLang].roles;
+let ri=0,ci=0,del=false,twGen=0,twEl=document.getElementById('tw');
+function tw(gen){
+    if (gen!==twGen) return;
     const cur=roles[ri];
-    if(!del){ twEl.textContent=cur.slice(0,++ci); if(ci===cur.length){ del=true; setTimeout(tw,2200); return; } }
+    if(!del){ twEl.textContent=cur.slice(0,++ci); if(ci===cur.length){ del=true; setTimeout(()=>tw(gen),2200); return; } }
     else { twEl.textContent=cur.slice(0,--ci); if(ci===0){ del=false; ri=(ri+1)%roles.length; } }
-    setTimeout(tw, del?38:78);
+    setTimeout(()=>tw(gen), del?38:78);
 }
-tw();
+function resetTypewriter(lang){
+    roles=I18N[lang].roles; ri=0; ci=0; del=false; twGen++;
+    tw(twGen);
+}
+tw(twGen);
 
 // SCROLL REVEAL
 const rvEls = document.querySelectorAll('.rv');
@@ -731,10 +860,14 @@ document.querySelectorAll('.proj-card').forEach(c=>{
 function copyEmail(){
     navigator.clipboard.writeText('claudiasii3@udca.edu.co').then(()=>{
         const b=document.getElementById('copy-btn');
-        b.innerHTML='<i class="bi bi-check2"></i> ¡Copiado!'; b.classList.add('copied');
-        setTimeout(()=>{ b.innerHTML='<i class="bi bi-clipboard"></i> Copiar email'; b.classList.remove('copied'); },2000);
+        const dict=I18N[currentLang];
+        b.innerHTML=`<i class="bi bi-check2"></i> ${dict.copiedLabel}`; b.classList.add('copied');
+        setTimeout(()=>{ b.innerHTML=`<i class="bi bi-clipboard"></i> ${dict.copyLabel}`; b.classList.remove('copied'); },2000);
     });
 }
+
+// INIT LANGUAGE (must run after typewriter/cursor setup above)
+applyLang(currentLang);
 </script>
 </body>
 </html>
