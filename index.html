@@ -35,11 +35,12 @@
             --maxw:    1220px;
         }
 
-        html { scroll-behavior: smooth; }
+        html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
         body {
             font-family: var(--sans); background: var(--bg); color: var(--text);
             overflow-x: hidden; cursor: none; -webkit-font-smoothing: antialiased;
         }
+        img { max-width: 100%; }
 
         ::selection { background: var(--blue); color: #fff; }
         ::-webkit-scrollbar       { width: 5px; }
@@ -131,7 +132,7 @@
         .nav-toggle span { width:24px; height:2px; background:var(--text); border-radius:2px; }
 
         /* HERO */
-        #hero { position:relative; min-height:100vh; display:flex; align-items:center; padding:100px clamp(20px,5vw,56px) 40px; overflow:hidden; }
+        #hero { position:relative; min-height:100vh; min-height:100svh; display:flex; align-items:center; padding:100px clamp(20px,5vw,56px) 40px; overflow:hidden; }
         #cv { position:absolute; inset:0; z-index:0; }
         .hero-grid {
             position:relative; z-index:1; max-width:var(--maxw); margin:0 auto; width:100%;
@@ -341,19 +342,75 @@
                 background:var(--bg-2); border-bottom:1px solid var(--line); padding:24px clamp(20px,5vw,56px);
             }
             .nav-toggle { display:flex; }
-            .hero-grid { grid-template-columns:1fr; gap:40px; }
+
+            section { padding:64px 20px; }
+
+            /* Once the hero stacks it is far taller than the screen, so forcing
+               a full-viewport height only added dead space above the fold. */
+            #hero { min-height:auto; padding:104px 20px 56px; }
+            .hero-grid { grid-template-columns:1fr; gap:30px; }
             .hero-avatar { order:-1; }
-            .hero-avatar img { max-width:270px; margin:0 auto; }
+            .hero-avatar img { max-width:250px; margin:0 auto; }
+            .hero-avatar::before { width:300px; height:300px; }
+            .hero-avatar::after  { width:252px; height:252px; }
+            .hero-name { font-size:clamp(1.8rem,7.2vw,2.4rem); }
+            .hero-desc { margin-bottom:26px; }
+            .scroll-btn { display:none; }   /* meaningless once the page scrolls naturally */
+
             .hero-side { grid-template-columns:1fr; gap:0; }
             .hs-block { border-right:none; border-bottom:1px solid var(--line); padding:20px 0; }
             .hs-block:last-child { border-bottom:none; }
+
             .stats { grid-template-columns:1fr 1fr; gap:26px 18px; }
+            .worked-row { margin-top:44px; padding-top:26px; gap:16px; }
+            .worked-items { gap:16px 22px; }
             .proj-grid { grid-template-columns:1fr; }
+            .soc { width:44px; height:44px; }   /* comfortable touch target */
         }
-        @media (pointer:coarse) {
+        @media (max-width:480px) {
+            section { padding:56px 18px; }
+            #hero { padding:96px 18px 46px; }
+            .nav-inner { gap:12px; }
+            .nav-right { gap:14px; }
+            .logo-name { font-size:.85rem; }
+
+            .hero-name { font-size:1.72rem; line-height:1.22; }
+            .big { font-size:1.55rem; }
+            .lead, .hero-desc { font-size:.89rem; }
+            .hero-avatar img { max-width:212px; }
+            .hero-avatar::before { width:255px; height:255px; }
+            .hero-avatar::after  { width:214px; height:214px; }
+
+            /* Two columns squeezed the big number against its own label. */
+            .stats { grid-template-columns:1fr; gap:16px; }
+            .stat-n { font-size:2rem; min-width:58px; }
+            .stat-l { font-size:.78rem; }
+
+            .skills-grid { grid-template-columns:1fr 1fr; gap:10px; }
+            .skill { padding:15px 12px; gap:10px; }
+            .skill i { font-size:1.35rem; }
+            .skill span { font-size:.78rem; }
+
+            .srv { padding:22px 18px; }
+            .pcard-body { padding:18px; }
+            .tl-desc, .pcard-desc { font-size:.83rem; }
+
+            /* Stacked full-width targets beat three buttons wrapping raggedly */
+            .contact-actions { flex-direction:column; }
+            .contact-actions > * { width:100%; justify-content:center; }
+            .cv-btn { justify-content:center; }
+            .proj-foot { flex-direction:column; align-items:stretch; }
+            .proj-foot .btn { justify-content:center; }
+        }
+        @media (max-width:360px) {
+            .logo-name { display:none; }   /* nav was overflowing on 320px screens */
+        }
+        /* Not every mobile browser reports a coarse pointer, so the custom cursor
+           is also retired by width — otherwise its ring floats over the hero. */
+        @media (pointer:coarse), (max-width:768px) {
             body { cursor:auto; }
-            .btn, .lang-opt, .nav-toggle, .soc, .scroll-btn, .cv-btn { cursor:pointer; }
-            #cur-dot, #cur-ring { display:none; }
+            .btn, .lang-opt, .nav-toggle, .soc, .scroll-btn, .cv-btn, .plink, .tlink { cursor:pointer; }
+            #cur-dot, #cur-ring { display:none !important; }
         }
         @media (prefers-reduced-motion:reduce) {
             *, *::before, *::after { animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; }
@@ -459,10 +516,10 @@
                 </div>
             </div>
             <div class="stats rv">
-                <div class="stat"><span class="stat-n" data-target="2">0</span><span class="stat-l" data-i18n="statYears">Years of<br>experience</span></div>
-                <div class="stat"><span class="stat-n" data-target="7">0</span><span class="stat-l" data-i18n="statProjects">Featured<br>projects</span></div>
-                <div class="stat"><span class="stat-n" data-target="10">0</span><span class="stat-l" data-i18n="statTech">Technologies<br>mastered</span></div>
-                <div class="stat"><span class="stat-n" data-target="5">0</span><span class="stat-l" data-i18n="statSystems">SII modules<br>in production</span></div>
+                <div class="stat"><span class="stat-n" data-target="2">0</span><span class="stat-l" data-i18n-html="statYears">Years of<br>experience</span></div>
+                <div class="stat"><span class="stat-n" data-target="7">0</span><span class="stat-l" data-i18n-html="statProjects">Featured<br>projects</span></div>
+                <div class="stat"><span class="stat-n" data-target="10">0</span><span class="stat-l" data-i18n-html="statTech">Technologies<br>mastered</span></div>
+                <div class="stat"><span class="stat-n" data-target="5">0</span><span class="stat-l" data-i18n-html="statSystems">SII modules<br>in production</span></div>
             </div>
         </div>
 
@@ -963,10 +1020,16 @@ class P {
 function initPts(){ pts = Array.from({length:Math.min(Math.floor(W*H/11000),110)}, ()=>new P()); }
 initPts();
 
+// Linking every pair is O(n²) per frame. On phones it burns battery for an
+// effect that sits behind the content anyway, so there we draw dots only.
+const linkParticles = () => innerWidth > 768;
+
 (function frame(){
     ctx.clearRect(0,0,W,H);
+    const link = linkParticles();
     for(let i=0;i<pts.length;i++){
         pts[i].up(); pts[i].dr();
+        if(!link) continue;
         for(let j=i+1;j<pts.length;j++){
             const dx=pts[i].x-pts[j].x, dy=pts[i].y-pts[j].y, d=Math.sqrt(dx*dx+dy*dy);
             if(d<130){
