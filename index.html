@@ -6,6 +6,25 @@
     <meta name="description" id="meta-desc" content="Portfolio of Richard Malagón — Fullstack Developer Angular · Node.js · PostgreSQL">
     <title>Richard Malagón | Fullstack Developer</title>
     <link rel="icon" type="image/png" href="logo-negro.png">
+    <link rel="canonical" href="https://sneider4.github.io/portfolio/">
+    <meta name="author" content="Richard Sneider Malagón Conde">
+    <meta name="theme-color" content="#171B26">
+
+    <!-- Open Graph: preview shown when the link is shared on LinkedIn / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Richard Malagón">
+    <meta property="og:url" content="https://sneider4.github.io/portfolio/">
+    <meta property="og:title" id="og-title" content="Richard Malagón | Fullstack Developer">
+    <meta property="og:description" id="og-desc" content="Portfolio of Richard Malagón — Fullstack Developer Angular · Node.js · PostgreSQL">
+    <meta property="og:image" content="https://sneider4.github.io/portfolio/richard-foto.png">
+    <meta property="og:image:alt" content="Richard Malagón, Fullstack Developer">
+    <meta property="og:locale" id="og-locale" content="en_US">
+    <meta property="og:locale:alternate" content="es_CO">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" id="tw-title" content="Richard Malagón | Fullstack Developer">
+    <meta name="twitter:description" id="tw-desc" content="Portfolio of Richard Malagón — Fullstack Developer Angular · Node.js · PostgreSQL">
+    <meta name="twitter:image" content="https://sneider4.github.io/portfolio/richard-foto.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -517,7 +536,7 @@
             </div>
             <div class="stats rv">
                 <div class="stat"><span class="stat-n" data-target="2">0</span><span class="stat-l" data-i18n-html="statYears">Years of<br>experience</span></div>
-                <div class="stat"><span class="stat-n" data-target="7">0</span><span class="stat-l" data-i18n-html="statProjects">Featured<br>projects</span></div>
+                <div class="stat"><span class="stat-n" data-target="4" data-suffix="">0</span><span class="stat-l" data-i18n-html="statProjects">Featured<br>projects</span></div>
                 <div class="stat"><span class="stat-n" data-target="10">0</span><span class="stat-l" data-i18n-html="statTech">Technologies<br>mastered</span></div>
                 <div class="stat"><span class="stat-n" data-target="5">0</span><span class="stat-l" data-i18n-html="statSystems">SII modules<br>in production</span></div>
             </div>
@@ -580,6 +599,7 @@
             <div class="skill"><i class="devicon-typescript-plain colored"></i><span>TypeScript</span></div>
             <div class="skill"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></div>
             <div class="skill"><i class="devicon-react-original colored"></i><span>React</span></div>
+            <div class="skill"><i class="devicon-nextjs-original" style="color:#e8edf4"></i><span>Next.js</span></div>
             <div class="skill"><i class="devicon-nodejs-plain colored"></i><span>Node.js</span></div>
             <div class="skill"><i class="devicon-express-original" style="color:#e8edf4"></i><span>Express</span></div>
             <div class="skill"><i class="devicon-nestjs-plain colored"></i><span>NestJS</span></div>
@@ -590,6 +610,7 @@
             <div class="skill"><i class="devicon-github-original" style="color:#e8edf4"></i><span>GitHub</span></div>
             <div class="skill"><i class="devicon-azure-plain colored"></i><span>Azure AD</span></div>
             <div class="skill"><i class="devicon-bootstrap-plain colored"></i><span>Bootstrap</span></div>
+            <div class="skill"><i class="devicon-tailwindcss-plain colored"></i><span>Tailwind CSS</span></div>
             <div class="skill"><i class="bi bi-robot" style="color:var(--blue-l)"></i><span>Gemini AI</span></div>
             <div class="skill"><i class="bi bi-braces" style="color:var(--blue-l)"></i><span>REST APIs</span></div>
             <div class="skill"><i class="bi bi-shield-lock" style="color:var(--blue-l)"></i><span>JWT / RBAC</span></div>
@@ -728,38 +749,25 @@
             </div>
 
             <div class="pcard rv">
-                <div class="pcard-top" style="background:linear-gradient(135deg,#062A3F,#0C4A6E,#0E7490)">
-                    <span class="pcard-mark">TM</span>
+                <div class="pcard-top" style="background:linear-gradient(135deg,#2A1206,#7C2D12,#B91C1C)">
+                    <span class="pcard-mark">RO</span>
                 </div>
                 <div class="pcard-body">
-                    <div class="pcard-head"><h3 class="pcard-name">Task Manager API</h3></div>
-                    <p class="pcard-desc" data-i18n="tmDesc">REST API for project and task management with JWT authentication, password hashing, full CRUD, owner and collaborator access control, and centralized error handling.</p>
+                    <div class="pcard-head">
+                        <h3 class="pcard-name">Ronda</h3>
+                        <span class="pcard-status" data-i18n="statusDemo">Demo</span>
+                    </div>
+                    <p class="pcard-desc" data-i18n="roDesc">Management system for traditional Colombian bars: tables, orders, inventory with low-stock alerts, sales, cash reconciliation and monthly balance. Role-based access and SVG charts, with no external chart library.</p>
                     <div class="pcard-tech">
-                        <span class="ttag">Node.js</span><span class="ttag">Express</span>
-                        <span class="ttag">PostgreSQL</span><span class="ttag">JWT</span>
+                        <span class="ttag">Next.js 15</span><span class="ttag">React 19</span>
+                        <span class="ttag">TypeScript</span><span class="ttag">Tailwind 4</span>
                     </div>
                     <div class="pcard-links">
-                        <a href="https://github.com/Sneider4/task-manager-api" target="_blank" rel="noopener" class="plink pri">
-                            <i class="bi bi-github"></i> <span data-i18n="linkRepo">Repository</span>
+                        <a href="https://ronda-lilac.vercel.app/" target="_blank" rel="noopener" class="plink pri">
+                            <i class="bi bi-box-arrow-up-right"></i> <span data-i18n="linkDemo">Live demo</span>
                         </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="pcard rv">
-                <div class="pcard-top" style="background:linear-gradient(135deg,#052E1B,#166534,#15803D)">
-                    <span class="pcard-mark">EC</span>
-                </div>
-                <div class="pcard-body">
-                    <div class="pcard-head"><h3 class="pcard-name" data-i18n="dbName">Economic Dashboard</h3></div>
-                    <p class="pcard-desc" data-i18n="dbDesc">Interactive dashboard of world economic indicators with KPI cards and dynamic charts comparing countries. Consumes public World Bank APIs — no API key required.</p>
-                    <div class="pcard-tech">
-                        <span class="ttag">Angular 21</span><span class="ttag">Chart.js</span>
-                        <span class="ttag">TypeScript</span>
-                    </div>
-                    <div class="pcard-links">
-                        <a href="https://github.com/Sneider4/economic-dashboard" target="_blank" rel="noopener" class="plink pri">
-                            <i class="bi bi-github"></i> <span data-i18n="linkRepo">Repository</span>
+                        <a href="https://github.com/Sneider4/ronda" target="_blank" rel="noopener" class="plink sec">
+                            <i class="bi bi-github"></i> <span data-i18n="linkCode">Code</span>
                         </a>
                     </div>
                 </div>
@@ -853,13 +861,11 @@ const I18N = {
         skillsSub:'The tools I use to take a product from first commit to production.',
         projTag:'My work', projTitle:'Selected <span>projects</span>',
         projSub:'Built from scratch — architecture, database, interface and deployment.',
-        statusDev:'In development',
+        statusDev:'In development', statusDemo:'Demo',
         cpDesc:'Multi-tenant SaaS for customer support analysis. Google Gemini reads every ticket and returns sentiment, frustration level, churn risk and priority, feeding a live dashboard for Customer Success teams.',
         migDesc:'Multi-tenant platform for bakery management: inventory, point of sale, orders, customers and reports. Nine NestJS microservices behind an API gateway over Redis and RabbitMQ.',
         mdDesc:'FIFA World Cup 2026 dashboard with live results, real-time KPIs, top scorers, groups, full fixture and the knockout bracket. Serverless proxy on Vercel to keep the API key off the client.',
-        tmDesc:'REST API for project and task management with JWT authentication, password hashing, full CRUD, owner and collaborator access control, and centralized error handling.',
-        dbName:'Economic Dashboard',
-        dbDesc:'Interactive dashboard of world economic indicators with KPI cards and dynamic charts comparing countries. Consumes public World Bank APIs — no API key required.',
+        roDesc:'Management system for traditional Colombian bars: tables, orders, inventory with low-stock alerts, sales, cash reconciliation and monthly balance. Role-based access and SVG charts, with no external chart library.',
         linkDemo:'Live demo', linkCode:'Code', linkRepo:'Repository',
         moreDesc:'Every repository, with source code and documentation, lives on GitHub.',
         moreBtn:'All repositories',
@@ -908,13 +914,11 @@ const I18N = {
         skillsSub:'Las herramientas con las que llevo un producto del primer commit a producción.',
         projTag:'Mi trabajo', projTitle:'Proyectos <span>destacados</span>',
         projSub:'Construidos de cero — arquitectura, base de datos, interfaz y despliegue.',
-        statusDev:'En desarrollo',
+        statusDev:'En desarrollo', statusDemo:'Demo',
         cpDesc:'SaaS multi-tenant para análisis de soporte al cliente. Google Gemini lee cada ticket y devuelve sentimiento, nivel de frustración, riesgo de churn y prioridad, alimentando un dashboard en vivo para equipos de Customer Success.',
         migDesc:'Plataforma multi-tenant para gestión de panaderías: inventario, punto de venta, pedidos, clientes y reportes. Nueve microservicios NestJS tras un API gateway sobre Redis y RabbitMQ.',
         mdDesc:'Dashboard del FIFA World Cup 2026 con resultados en vivo, KPIs en tiempo real, goleadores, grupos, fixture completo y bracket eliminatorio. Proxy serverless en Vercel para mantener la API key fuera del cliente.',
-        tmDesc:'API REST para gestión de proyectos y tareas con autenticación JWT, cifrado de contraseñas, CRUD completo, control de acceso por propietario y colaboradores, y manejo centralizado de errores.',
-        dbName:'Dashboard Económico',
-        dbDesc:'Dashboard interactivo de indicadores económicos mundiales con tarjetas KPI y gráficas dinámicas comparativas entre países. Consume APIs públicas del Banco Mundial, sin API key.',
+        roDesc:'Sistema de gestión para bares tradicionales colombianos: mesas, pedidos, inventario con alertas de stock bajo, ventas, cuadre de caja y balance mensual. Acceso por roles y gráficas en SVG, sin librería externa de charts.',
         linkDemo:'Ver demo', linkCode:'Código', linkRepo:'Repositorio',
         moreDesc:'Todos los repositorios, con código fuente y documentación, están en GitHub.',
         moreBtn:'Ver repositorios',
@@ -930,11 +934,22 @@ const I18N = {
 
 let currentLang = localStorage.getItem('portfolio-lang') || 'en';
 
+function setMeta(id, value){
+    const el = document.getElementById(id);
+    if (el) el.setAttribute('content', value);
+}
+
 function applyLang(lang){
     const dict = I18N[lang];
     document.documentElement.lang = lang;
-    document.title = 'Richard Malagón | ' + (lang === 'es' ? 'Desarrollador Fullstack' : 'Fullstack Developer');
+    const title = 'Richard Malagón | ' + (lang === 'es' ? 'Desarrollador Fullstack' : 'Fullstack Developer');
+    document.title = title;
     document.getElementById('meta-desc').setAttribute('content', dict.metaDesc);
+
+    // Keep the share preview in sync with the visible language.
+    setMeta('og-title', title);      setMeta('tw-title', title);
+    setMeta('og-desc', dict.metaDesc); setMeta('tw-desc', dict.metaDesc);
+    setMeta('og-locale', lang === 'es' ? 'es_CO' : 'en_US');
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const v = dict[el.dataset.i18n]; if (v !== undefined) el.textContent = v;
     });
@@ -1073,10 +1088,13 @@ document.querySelectorAll('.rv').forEach(el => rvObs.observe(el));
 // ── COUNTERS ──────────────────────────────────────────────────────────
 function animCount(el){
     const t = +el.dataset.target, dur = 1300, step = t/(dur/16); let c = 0;
+    // Most stats are a floor ("10+ technologies"); the project count is exact,
+    // so it opts out of the plus with data-suffix="".
+    const sfx = el.dataset.suffix ?? '+';
     const timer = setInterval(() => {
         c += step;
-        if(c >= t){ el.textContent = t+'+'; clearInterval(timer); }
-        else el.textContent = Math.floor(c)+'+';
+        if(c >= t){ el.textContent = t+sfx; clearInterval(timer); }
+        else el.textContent = Math.floor(c)+sfx;
     }, 16);
 }
 new IntersectionObserver((entries, obs) => {
