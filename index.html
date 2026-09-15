@@ -549,7 +549,6 @@
                 <span class="worked-item"><i class="devicon-nodejs-plain colored"></i>Node.js</span>
                 <span class="worked-item"><i class="devicon-postgresql-plain colored"></i>PostgreSQL</span>
                 <span class="worked-item"><i class="devicon-typescript-plain colored"></i>TypeScript</span>
-                <span class="worked-item"><i class="devicon-nestjs-plain colored"></i>NestJS</span>
             </div>
         </div>
     </div>
@@ -602,10 +601,8 @@
             <div class="skill"><i class="devicon-nextjs-original" style="color:#e8edf4"></i><span>Next.js</span></div>
             <div class="skill"><i class="devicon-nodejs-plain colored"></i><span>Node.js</span></div>
             <div class="skill"><i class="devicon-express-original" style="color:#e8edf4"></i><span>Express</span></div>
-            <div class="skill"><i class="devicon-nestjs-plain colored"></i><span>NestJS</span></div>
             <div class="skill"><i class="devicon-postgresql-plain colored"></i><span>PostgreSQL</span></div>
             <div class="skill"><i class="devicon-mysql-plain colored"></i><span>MySQL</span></div>
-            <div class="skill"><i class="devicon-docker-plain colored"></i><span>Docker</span></div>
             <div class="skill"><i class="devicon-git-plain colored"></i><span>Git</span></div>
             <div class="skill"><i class="devicon-github-original" style="color:#e8edf4"></i><span>GitHub</span></div>
             <div class="skill"><i class="devicon-azure-plain colored"></i><span>Azure AD</span></div>
@@ -681,6 +678,28 @@
         <p class="lead rv" data-i18n="projSub">Built from scratch — architecture, database, interface and deployment.</p>
 
         <div class="proj-grid">
+
+            <div class="pcard rv">
+                <div class="pcard-top" style="background:linear-gradient(135deg,#0B2D6B,#1146C9,#2563FF)">
+                    <span class="pcard-mark">ST</span>
+                </div>
+                <div class="pcard-body">
+                    <div class="pcard-head">
+                        <h3 class="pcard-name">Susténtalo</h3>
+                        <span class="pcard-status" data-i18n="statusLive">Live · Founder</span>
+                    </div>
+                    <p class="pcard-desc" data-i18n="suDesc">Free, Spanish-language platform for learning software development, where every topic is passed with an assessment and every module with an oral defense. The live landing runs a JavaScript diagnostic with a 0–5 grade and a waitlist on serverless PostgreSQL.</p>
+                    <div class="pcard-tech">
+                        <span class="ttag">JavaScript</span><span class="ttag">Node.js</span>
+                        <span class="ttag">PostgreSQL</span><span class="ttag">Vercel</span>
+                    </div>
+                    <div class="pcard-links">
+                        <a href="https://sustentalo-landing.vercel.app" target="_blank" rel="noopener" class="plink pri">
+                            <i class="bi bi-box-arrow-up-right"></i> <span data-i18n="linkSite">Visit site</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
             <div class="pcard rv">
                 <div class="pcard-top" style="background:linear-gradient(135deg,#0B2A6B,#0D6EFD,#123A8A)">
@@ -842,11 +861,12 @@ const I18N = {
         skillsSub:'The tools I use to take a product from first commit to production.',
         projTag:'My work', projTitle:'Selected <span>projects</span>',
         projSub:'Built from scratch — architecture, database, interface and deployment.',
-        statusDev:'In development', statusDemo:'Demo',
+        statusDev:'In development', statusDemo:'Demo', statusLive:'Live · Founder',
+        suDesc:'Free, Spanish-language platform for learning software development, where every topic is passed with an assessment and every module with an oral defense. The live landing runs a JavaScript diagnostic with a 0–5 grade and a waitlist on serverless PostgreSQL.',
         cpDesc:'Multi-tenant SaaS for customer support analysis. Google Gemini reads every ticket and returns sentiment, frustration level, churn risk and priority, feeding a live dashboard for Customer Success teams.',
         mdDesc:'FIFA World Cup 2026 dashboard with live results, real-time KPIs, top scorers, groups, full fixture and the knockout bracket. Serverless proxy on Vercel to keep the API key off the client.',
         roDesc:'Management system for traditional Colombian bars: tables, orders, inventory with low-stock alerts, sales, cash reconciliation and monthly balance. Role-based access and SVG charts, with no external chart library.',
-        linkDemo:'Live demo', linkCode:'Code', linkRepo:'Repository',
+        linkDemo:'Live demo', linkCode:'Code', linkRepo:'Repository', linkSite:'Visit site',
         moreDesc:'Every repository, with source code and documentation, lives on GitHub.',
         moreBtn:'All repositories',
         contactTag:'Contact', contactTitle:'Have a project in <span>mind?</span>',
@@ -894,11 +914,12 @@ const I18N = {
         skillsSub:'Las herramientas con las que llevo un producto del primer commit a producción.',
         projTag:'Mi trabajo', projTitle:'Proyectos <span>destacados</span>',
         projSub:'Construidos de cero — arquitectura, base de datos, interfaz y despliegue.',
-        statusDev:'En desarrollo', statusDemo:'Demo',
+        statusDev:'En desarrollo', statusDemo:'Demo', statusLive:'En vivo · Fundador',
+        suDesc:'Plataforma gratuita para aprender desarrollo de software en español, donde cada tema se aprueba con una evaluación y cada módulo con una sustentación. La landing en vivo tiene un diagnóstico de JavaScript con nota de 0 a 5 y lista de espera sobre PostgreSQL serverless.',
         cpDesc:'SaaS multi-tenant para análisis de soporte al cliente. Google Gemini lee cada ticket y devuelve sentimiento, nivel de frustración, riesgo de churn y prioridad, alimentando un dashboard en vivo para equipos de Customer Success.',
         mdDesc:'Dashboard del FIFA World Cup 2026 con resultados en vivo, KPIs en tiempo real, goleadores, grupos, fixture completo y bracket eliminatorio. Proxy serverless en Vercel para mantener la API key fuera del cliente.',
         roDesc:'Sistema de gestión para bares tradicionales colombianos: mesas, pedidos, inventario con alertas de stock bajo, ventas, cuadre de caja y balance mensual. Acceso por roles y gráficas en SVG, sin librería externa de charts.',
-        linkDemo:'Ver demo', linkCode:'Código', linkRepo:'Repositorio',
+        linkDemo:'Ver demo', linkCode:'Código', linkRepo:'Repositorio', linkSite:'Ver sitio',
         moreDesc:'Todos los repositorios, con código fuente y documentación, están en GitHub.',
         moreBtn:'Ver repositorios',
         contactTag:'Contacto', contactTitle:'¿Tienes un proyecto en <span>mente?</span>',
