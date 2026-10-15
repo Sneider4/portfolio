@@ -536,7 +536,7 @@
             </div>
             <div class="stats rv">
                 <div class="stat"><span class="stat-n" data-target="2">0</span><span class="stat-l" data-i18n-html="statYears">Years of<br>experience</span></div>
-                <div class="stat"><span class="stat-n" data-target="4" data-suffix="">0</span><span class="stat-l" data-i18n-html="statProjects">Featured<br>projects</span></div>
+                <div class="stat"><span class="stat-n" data-target="5" data-suffix="">0</span><span class="stat-l" data-i18n-html="statProjects">Featured<br>projects</span></div>
                 <div class="stat"><span class="stat-n" data-target="10">0</span><span class="stat-l" data-i18n-html="statTech">Technologies<br>mastered</span></div>
                 <div class="stat"><span class="stat-n" data-target="5">0</span><span class="stat-l" data-i18n-html="statSystems">SII modules<br>in production</span></div>
             </div>
@@ -602,6 +602,7 @@
             <div class="skill"><i class="devicon-nodejs-plain colored"></i><span>Node.js</span></div>
             <div class="skill"><i class="devicon-express-original" style="color:#e8edf4"></i><span>Express</span></div>
             <div class="skill"><i class="devicon-postgresql-plain colored"></i><span>PostgreSQL</span></div>
+            <div class="skill"><i class="devicon-supabase-plain colored"></i><span>Supabase</span></div>
             <div class="skill"><i class="devicon-mysql-plain colored"></i><span>MySQL</span></div>
             <div class="skill"><i class="devicon-git-plain colored"></i><span>Git</span></div>
             <div class="skill"><i class="devicon-github-original" style="color:#e8edf4"></i><span>GitHub</span></div>
@@ -720,6 +721,31 @@
                             <i class="bi bi-box-arrow-up-right"></i> <span data-i18n="linkDemo">Live demo</span>
                         </a>
                         <a href="https://github.com/Sneider4/clientpulse-ai" target="_blank" rel="noopener" class="plink sec">
+                            <i class="bi bi-github"></i> <span data-i18n="linkCode">Code</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pcard rv">
+                <div class="pcard-top" style="background:linear-gradient(135deg,#0A1A12,#0F5132,#16A34A)">
+                    <span class="pcard-mark">LC</span>
+                </div>
+                <div class="pcard-body">
+                    <div class="pcard-head">
+                        <h3 class="pcard-name">La Casa</h3>
+                        <span class="pcard-status" data-i18n="statusOnline">Live</span>
+                    </div>
+                    <p class="pcard-desc" data-i18n="lcDesc">Real-time party game: anyone opens a bet from their phone, everyone sees it instantly, picks a side against the clock and whoever loses pays the forfeit. Supabase Realtime with row-level security and anonymous sessions — no sign-up, no install.</p>
+                    <div class="pcard-tech">
+                        <span class="ttag">Angular 21</span><span class="ttag">Supabase</span>
+                        <span class="ttag">Realtime</span><span class="ttag">PostgreSQL</span>
+                    </div>
+                    <div class="pcard-links">
+                        <a href="https://la-casa.vercel.app" target="_blank" rel="noopener" class="plink pri">
+                            <i class="bi bi-box-arrow-up-right"></i> <span data-i18n="linkDemo">Live demo</span>
+                        </a>
+                        <a href="https://github.com/Sneider4/la-casa" target="_blank" rel="noopener" class="plink sec">
                             <i class="bi bi-github"></i> <span data-i18n="linkCode">Code</span>
                         </a>
                     </div>
@@ -861,7 +887,8 @@ const I18N = {
         skillsSub:'The tools I use to take a product from first commit to production.',
         projTag:'My work', projTitle:'Selected <span>projects</span>',
         projSub:'Built from scratch — architecture, database, interface and deployment.',
-        statusDev:'In development', statusDemo:'Demo', statusLive:'Live · Founder',
+        statusDev:'In development', statusDemo:'Demo', statusLive:'Live · Founder', statusOnline:'Live',
+        lcDesc:'Real-time party game: anyone opens a bet from their phone, everyone sees it instantly, picks a side against the clock and whoever loses pays the forfeit. Supabase Realtime with row-level security and anonymous sessions — no sign-up, no install.',
         suDesc:'Free, Spanish-language platform for learning software development, where every topic is passed with an assessment and every module with an oral defense. The live landing runs a JavaScript diagnostic with a 0–5 grade and a waitlist on serverless PostgreSQL.',
         cpDesc:'Multi-tenant SaaS for customer support analysis. Google Gemini reads every ticket and returns sentiment, frustration level, churn risk and priority, feeding a live dashboard for Customer Success teams.',
         mdDesc:'FIFA World Cup 2026 dashboard with live results, real-time KPIs, top scorers, groups, full fixture and the knockout bracket. Serverless proxy on Vercel to keep the API key off the client.',
@@ -914,7 +941,8 @@ const I18N = {
         skillsSub:'Las herramientas con las que llevo un producto del primer commit a producción.',
         projTag:'Mi trabajo', projTitle:'Proyectos <span>destacados</span>',
         projSub:'Construidos de cero — arquitectura, base de datos, interfaz y despliegue.',
-        statusDev:'En desarrollo', statusDemo:'Demo', statusLive:'En vivo · Fundador',
+        statusDev:'En desarrollo', statusDemo:'Demo', statusLive:'En vivo · Fundador', statusOnline:'En vivo',
+        lcDesc:'Juego de fiesta en tiempo real: cualquiera abre una apuesta desde su celular, a todos les aparece al instante, eligen bando contra reloj y quien pierde paga la penitencia. Supabase Realtime con seguridad a nivel de fila y sesiones anónimas, sin registro ni instalación.',
         suDesc:'Plataforma gratuita para aprender desarrollo de software en español, donde cada tema se aprueba con una evaluación y cada módulo con una sustentación. La landing en vivo tiene un diagnóstico de JavaScript con nota de 0 a 5 y lista de espera sobre PostgreSQL serverless.',
         cpDesc:'SaaS multi-tenant para análisis de soporte al cliente. Google Gemini lee cada ticket y devuelve sentimiento, nivel de frustración, riesgo de churn y prioridad, alimentando un dashboard en vivo para equipos de Customer Success.',
         mdDesc:'Dashboard del FIFA World Cup 2026 con resultados en vivo, KPIs en tiempo real, goleadores, grupos, fixture completo y bracket eliminatorio. Proxy serverless en Vercel para mantener la API key fuera del cliente.',
