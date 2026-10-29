@@ -319,6 +319,8 @@
         .plink.pri:hover { background:var(--blue-d); }
         .plink.sec { border:1px solid var(--line-2); color:var(--text-2); }
         .plink.sec:hover { color:var(--text); border-color:var(--text-2); }
+        /* The Cronograma demo lives behind a login: the shared account goes next to the link. */
+        .pcard-demo { font-family:var(--mono); font-size:.64rem; color:var(--text-2); margin-top:12px; }
 
         .proj-foot { margin-top:34px; display:flex; align-items:center; justify-content:space-between; gap:18px; flex-wrap:wrap; }
         .proj-foot p { font-size:.88rem; color:var(--text-2); }
@@ -536,7 +538,7 @@
             </div>
             <div class="stats rv">
                 <div class="stat"><span class="stat-n" data-target="2">0</span><span class="stat-l" data-i18n-html="statYears">Years of<br>experience</span></div>
-                <div class="stat"><span class="stat-n" data-target="5" data-suffix="">0</span><span class="stat-l" data-i18n-html="statProjects">Featured<br>projects</span></div>
+                <div class="stat"><span class="stat-n" data-target="6" data-suffix="">0</span><span class="stat-l" data-i18n-html="statProjects">Featured<br>projects</span></div>
                 <div class="stat"><span class="stat-n" data-target="10">0</span><span class="stat-l" data-i18n-html="statTech">Technologies<br>mastered</span></div>
                 <div class="stat"><span class="stat-n" data-target="5">0</span><span class="stat-l" data-i18n-html="statSystems">SII modules<br>in production</span></div>
             </div>
@@ -699,6 +701,32 @@
                             <i class="bi bi-box-arrow-up-right"></i> <span data-i18n="linkSite">Visit site</span>
                         </a>
                     </div>
+                </div>
+            </div>
+
+            <div class="pcard rv">
+                <div class="pcard-top" style="background:linear-gradient(135deg,#0B0B0C,#4A3220,#C2652A)">
+                    <span class="pcard-mark">CR</span>
+                </div>
+                <div class="pcard-body">
+                    <div class="pcard-head">
+                        <h3 class="pcard-name">Cronograma</h3>
+                        <span class="pcard-status" data-i18n="statusOnline">Live</span>
+                    </div>
+                    <p class="pcard-desc" data-i18n="crDesc">Collaborative project planning in real time: the same activities seen as a Gantt chart, calendar, Kanban board or list, all editable by dragging. Teams join with an invite code and four permission roles, and the whole schedule travels to and from Excel in a single transaction.</p>
+                    <div class="pcard-tech">
+                        <span class="ttag">Angular 21</span><span class="ttag">Supabase</span>
+                        <span class="ttag">PostgreSQL RLS</span><span class="ttag">ExcelJS</span>
+                    </div>
+                    <div class="pcard-links">
+                        <a href="https://cronograma-xi.vercel.app" target="_blank" rel="noopener" class="plink pri">
+                            <i class="bi bi-box-arrow-up-right"></i> <span data-i18n="linkDemo">Live demo</span>
+                        </a>
+                        <a href="https://github.com/Sneider4/cronograma" target="_blank" rel="noopener" class="plink sec">
+                            <i class="bi bi-github"></i> <span data-i18n="linkCode">Code</span>
+                        </a>
+                    </div>
+                    <p class="pcard-demo" data-i18n="crDemo">Demo account — demo@cronograma.app · demo1234</p>
                 </div>
             </div>
 
@@ -888,6 +916,8 @@ const I18N = {
         projTag:'My work', projTitle:'Selected <span>projects</span>',
         projSub:'Built from scratch — architecture, database, interface and deployment.',
         statusDev:'In development', statusDemo:'Demo', statusLive:'Live · Founder', statusOnline:'Live',
+        crDesc:'Collaborative project planning in real time: the same activities seen as a Gantt chart, calendar, Kanban board or list, all editable by dragging. Teams join with an invite code and four permission roles, and the whole schedule travels to and from Excel in a single transaction.',
+        crDemo:'Demo account — demo@cronograma.app · demo1234',
         lcDesc:'Real-time party game: anyone opens a bet from their phone, everyone sees it instantly, picks a side against the clock and whoever loses pays the forfeit. Supabase Realtime with row-level security and anonymous sessions — no sign-up, no install.',
         suDesc:'Free, Spanish-language platform for learning software development, where every topic is passed with an assessment and every module with an oral defense. The live landing runs a JavaScript diagnostic with a 0–5 grade and a waitlist on serverless PostgreSQL.',
         cpDesc:'Multi-tenant SaaS for customer support analysis. Google Gemini reads every ticket and returns sentiment, frustration level, churn risk and priority, feeding a live dashboard for Customer Success teams.',
@@ -942,6 +972,8 @@ const I18N = {
         projTag:'Mi trabajo', projTitle:'Proyectos <span>destacados</span>',
         projSub:'Construidos de cero — arquitectura, base de datos, interfaz y despliegue.',
         statusDev:'En desarrollo', statusDemo:'Demo', statusLive:'En vivo · Fundador', statusOnline:'En vivo',
+        crDesc:'Planeación de proyectos en equipo y en tiempo real: las mismas actividades vistas como Gantt, calendario, tablero Kanban o lista, y editables arrastrando. El equipo entra con un código de invitación y cuatro roles de permisos, y el cronograma completo va y vuelve de Excel en una sola transacción.',
+        crDemo:'Cuenta de prueba — demo@cronograma.app · demo1234',
         lcDesc:'Juego de fiesta en tiempo real: cualquiera abre una apuesta desde su celular, a todos les aparece al instante, eligen bando contra reloj y quien pierde paga la penitencia. Supabase Realtime con seguridad a nivel de fila y sesiones anónimas, sin registro ni instalación.',
         suDesc:'Plataforma gratuita para aprender desarrollo de software en español, donde cada tema se aprueba con una evaluación y cada módulo con una sustentación. La landing en vivo tiene un diagnóstico de JavaScript con nota de 0 a 5 y lista de espera sobre PostgreSQL serverless.',
         cpDesc:'SaaS multi-tenant para análisis de soporte al cliente. Google Gemini lee cada ticket y devuelve sentimiento, nivel de frustración, riesgo de churn y prioridad, alimentando un dashboard en vivo para equipos de Customer Success.',
