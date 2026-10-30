@@ -277,15 +277,23 @@
         .edu-year { font-family:var(--mono); font-size:.68rem; color:var(--blue-l); white-space:nowrap; }
         .edu-org { font-size:.8rem; color:var(--text-2); line-height:1.6; }
 
-        /* SKILLS */
-        .skills-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(158px,1fr)); gap:14px; margin-top:44px; }
-        .skill {
-            background:var(--bg-2); border:1px solid var(--line); border-radius:12px; padding:20px 16px;
-            display:flex; align-items:center; gap:13px; transition:all .28s;
+        /* SKILLS — grouped by what each tool is for, not one tile per logo */
+        .skill-cols { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:14px; margin-top:44px; }
+        .skill-col {
+            background:var(--bg-2); border:1px solid var(--line); border-radius:14px; padding:24px 20px;
+            transition:all .28s;
         }
-        .skill i { font-size:1.6rem; flex:none; }
-        .skill span { font-size:.84rem; font-weight:600; }
-        .skill:hover { background:var(--bg-3); border-color:var(--blue); transform:translateY(-4px); }
+        .skill-col:hover { background:var(--bg-3); border-color:var(--blue); transform:translateY(-4px); }
+        .skill-col-h {
+            font-family:var(--mono); font-size:.62rem; font-weight:700; letter-spacing:.15em;
+            text-transform:uppercase; color:var(--blue-l); margin-bottom:14px;
+        }
+        .skill-row {
+            display:flex; align-items:center; gap:12px; padding:7px 0;
+            font-size:.84rem; font-weight:600; color:var(--text-2); transition:color .25s;
+        }
+        .skill-row i { font-size:1.3rem; width:23px; flex:none; text-align:center; }
+        .skill-row:hover { color:var(--text); }
 
         /* PROJECTS */
         #projects { background:var(--bg-2); }
@@ -354,6 +362,7 @@
         @media (max-width:900px) {
             .about-grid { grid-template-columns:1fr; gap:44px; }
             .worked-row { gap:24px; }
+            .skill-cols { grid-template-columns:1fr 1fr; }
             .res-grid { grid-template-columns:1fr; gap:48px; }
         }
         @media (max-width:768px) {
@@ -407,10 +416,9 @@
             .stat-n { font-size:2rem; min-width:58px; }
             .stat-l { font-size:.78rem; }
 
-            .skills-grid { grid-template-columns:1fr 1fr; gap:10px; }
-            .skill { padding:15px 12px; gap:10px; }
-            .skill i { font-size:1.35rem; }
-            .skill span { font-size:.78rem; }
+            .skill-cols { grid-template-columns:1fr; gap:10px; }
+            .skill-col { padding:18px 16px; }
+            .skill-row { font-size:.8rem; padding:6px 0; }
 
             .srv { padding:22px 18px; }
             .pcard-body { padding:18px; }
@@ -595,28 +603,33 @@
         <h2 class="big rv" data-i18n-html="skillsTitle">My extensive list of <span>skills</span></h2>
         <p class="lead rv" data-i18n="skillsSub">The tools I use to take a product from first commit to production.</p>
 
-        <div class="skills-grid rv">
-            <div class="skill"><i class="devicon-angularjs-plain colored"></i><span>Angular</span></div>
-            <div class="skill"><i class="devicon-typescript-plain colored"></i><span>TypeScript</span></div>
-            <div class="skill"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></div>
-            <div class="skill"><i class="devicon-react-original colored"></i><span>React</span></div>
-            <div class="skill"><i class="devicon-nextjs-original" style="color:#e8edf4"></i><span>Next.js</span></div>
-            <div class="skill"><i class="devicon-nodejs-plain colored"></i><span>Node.js</span></div>
-            <div class="skill"><i class="devicon-express-original" style="color:#e8edf4"></i><span>Express</span></div>
-            <div class="skill"><i class="devicon-postgresql-plain colored"></i><span>PostgreSQL</span></div>
-            <div class="skill"><i class="devicon-supabase-plain colored"></i><span>Supabase</span></div>
-            <div class="skill"><i class="devicon-mysql-plain colored"></i><span>MySQL</span></div>
-            <div class="skill"><i class="devicon-git-plain colored"></i><span>Git</span></div>
-            <div class="skill"><i class="devicon-github-original" style="color:#e8edf4"></i><span>GitHub</span></div>
-            <div class="skill"><i class="devicon-azure-plain colored"></i><span>Azure AD</span></div>
-            <div class="skill"><i class="devicon-bootstrap-plain colored"></i><span>Bootstrap</span></div>
-            <div class="skill"><i class="devicon-tailwindcss-plain colored"></i><span>Tailwind CSS</span></div>
-            <div class="skill"><i class="bi bi-robot" style="color:var(--blue-l)"></i><span>Gemini AI</span></div>
-            <div class="skill"><i class="bi bi-braces" style="color:var(--blue-l)"></i><span>REST APIs</span></div>
-            <div class="skill"><i class="bi bi-shield-lock" style="color:var(--blue-l)"></i><span>JWT / RBAC</span></div>
-            <div class="skill"><i class="bi bi-pie-chart-fill" style="color:#FF6384"></i><span>Chart.js</span></div>
-            <div class="skill"><i class="bi bi-bar-chart-fill" style="color:#F2C811"></i><span>Power BI</span></div>
-            <div class="skill"><i class="bi bi-triangle-fill" style="color:#e8edf4"></i><span>Vercel</span></div>
+        <div class="skill-cols rv">
+            <div class="skill-col">
+                <p class="skill-col-h" data-i18n="skFront">Frontend</p>
+                <span class="skill-row"><i class="devicon-angularjs-plain colored"></i>Angular</span>
+                <span class="skill-row"><i class="devicon-typescript-plain colored"></i>TypeScript</span>
+                <span class="skill-row"><i class="devicon-react-original colored"></i>React · Next.js</span>
+                <span class="skill-row"><i class="devicon-tailwindcss-plain colored"></i>Tailwind CSS</span>
+            </div>
+            <div class="skill-col">
+                <p class="skill-col-h" data-i18n="skBack">Backend &amp; data</p>
+                <span class="skill-row"><i class="devicon-nodejs-plain colored"></i>Node.js · Express</span>
+                <span class="skill-row"><i class="devicon-postgresql-plain colored"></i>PostgreSQL</span>
+                <span class="skill-row"><i class="bi bi-lightning-charge-fill" style="color:#3FCF8E"></i>Supabase</span>
+                <span class="skill-row"><i class="bi bi-shield-lock" style="color:var(--blue-l)"></i>REST · JWT / RBAC</span>
+            </div>
+            <div class="skill-col">
+                <p class="skill-col-h" data-i18n="skAI">AI &amp; analytics</p>
+                <span class="skill-row"><i class="bi bi-robot" style="color:var(--blue-l)"></i>Gemini AI</span>
+                <span class="skill-row"><i class="bi bi-pie-chart-fill" style="color:#FF6384"></i>Chart.js</span>
+                <span class="skill-row"><i class="bi bi-bar-chart-fill" style="color:#F2C811"></i>Power BI</span>
+            </div>
+            <div class="skill-col">
+                <p class="skill-col-h" data-i18n="skShip">Ship it</p>
+                <span class="skill-row"><i class="devicon-git-plain colored"></i>Git · GitHub</span>
+                <span class="skill-row"><i class="bi bi-triangle-fill" style="color:#e8edf4"></i>Vercel</span>
+                <span class="skill-row"><i class="devicon-azure-plain colored"></i>Azure AD</span>
+            </div>
         </div>
     </div>
 </section>
@@ -773,9 +786,6 @@
                         <a href="https://la-casa.vercel.app" target="_blank" rel="noopener" class="plink pri">
                             <i class="bi bi-box-arrow-up-right"></i> <span data-i18n="linkDemo">Live demo</span>
                         </a>
-                        <a href="https://github.com/Sneider4/la-casa" target="_blank" rel="noopener" class="plink sec">
-                            <i class="bi bi-github"></i> <span data-i18n="linkCode">Code</span>
-                        </a>
                     </div>
                 </div>
             </div>
@@ -911,8 +921,9 @@ const I18N = {
         edu1N:'Software Engineering', edu1Y:'In progress',
         edu2N:'Software Analysis & Development Technologist',
         edu3N:'JavaScript Programming',
-        skillsTag:'My skills', skillsTitle:'My extensive list of <span>skills</span>',
+        skillsTag:'My skills', skillsTitle:'The stack I <span>work with</span>',
         skillsSub:'The tools I use to take a product from first commit to production.',
+        skFront:'Frontend', skBack:'Backend & data', skAI:'AI & analytics', skShip:'Ship it',
         projTag:'My work', projTitle:'Selected <span>projects</span>',
         projSub:'Built from scratch — architecture, database, interface and deployment.',
         statusDev:'In development', statusDemo:'Demo', statusLive:'Live · Founder', statusOnline:'Live',
@@ -967,8 +978,9 @@ const I18N = {
         edu1N:'Ingeniería de Software', edu1Y:'En curso',
         edu2N:'Tecnólogo en Análisis y Desarrollo de Software',
         edu3N:'Programación con JavaScript',
-        skillsTag:'Mis skills', skillsTitle:'Mi lista completa de <span>skills</span>',
+        skillsTag:'Mis skills', skillsTitle:'El stack con el que <span>trabajo</span>',
         skillsSub:'Las herramientas con las que llevo un producto del primer commit a producción.',
+        skFront:'Frontend', skBack:'Backend y datos', skAI:'IA y analítica', skShip:'Despliegue',
         projTag:'Mi trabajo', projTitle:'Proyectos <span>destacados</span>',
         projSub:'Construidos de cero — arquitectura, base de datos, interfaz y despliegue.',
         statusDev:'En desarrollo', statusDemo:'Demo', statusLive:'En vivo · Fundador', statusOnline:'En vivo',
@@ -1044,7 +1056,7 @@ document.addEventListener('mousemove', e => {
     ring.style.left = rx+'px'; ring.style.top = ry+'px';
     requestAnimationFrame(animCursor);
 })();
-document.querySelectorAll('a,button,.skill,.pcard,.worked-item').forEach(el => {
+document.querySelectorAll('a,button,.skill-row,.skill-col,.pcard,.worked-item').forEach(el => {
     el.addEventListener('mouseenter', () => {
         ring.style.width='48px'; ring.style.height='48px';
         ring.style.borderColor='rgba(59,135,255,.9)'; ring.style.background='rgba(13,110,253,.12)';
