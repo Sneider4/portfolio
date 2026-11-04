@@ -463,7 +463,36 @@
             </div>
         </article>
 
-        <!-- 04 · Mundial 2026 -->
+        <!-- 04 · La Casa -->
+        <article class="case">
+            <figure class="case-shot rv">
+                <div class="frame">
+                    <div class="frame-bar"><i></i><i></i><i></i><span class="frame-url">la-casa-jet.vercel.app</span></div>
+                    <img src="shots/la-casa.jpg" alt="La Casa — pantalla de inicio del juego de apuestas en vivo" loading="lazy" width="1200" height="750">
+                </div>
+            </figure>
+            <div class="case-body rv">
+                <div class="case-head">
+                    <span class="case-num">04</span>
+                    <span class="case-state" data-i18n="statusOnline">Live</span>
+                </div>
+                <h3 class="case-name">La Casa</h3>
+                <dl class="story">
+                    <div class="story-row"><dt class="story-k" data-i18n="kProblem">The problem</dt><dd class="story-v" data-i18n-html="lcProb">At a party, bets are made out loud: nobody remembers who said what, and even less who ended up paying the forfeit.</dd></div>
+                    <div class="story-row"><dt class="story-k" data-i18n="kDid">What I did</dt><dd class="story-v" data-i18n-html="lcDid">Live bets from your phone: someone opens one, sets the sides and the forfeit, and everyone picks against the clock. No sign-up, no install.</dd></div>
+                    <div class="story-row"><dt class="story-k" data-i18n="kResult">The result</dt><dd class="story-v" data-i18n-html="lcRes">The clock and the closing run <b>in the database, not in the browser</b>, so nobody wins by changing the time on their phone. Votes stay hidden until the bet closes, and whoever doesn't vote pays too.</dd></div>
+                </dl>
+                <div class="case-tech">
+                    <span class="ttag">Angular 21</span><span class="ttag">Supabase</span>
+                    <span class="ttag">Realtime</span><span class="ttag">PostgreSQL RLS</span>
+                </div>
+                <div class="case-links">
+                    <a href="https://la-casa-jet.vercel.app/" target="_blank" rel="noopener" class="btn solid"><i class="bi bi-box-arrow-up-right"></i> <span data-i18n="linkDemo">Live demo</span></a>
+                </div>
+            </div>
+        </article>
+
+        <!-- 05 · Mundial 2026 -->
         <article class="case">
             <figure class="case-shot rv">
                 <div class="frame">
@@ -473,7 +502,7 @@
             </figure>
             <div class="case-body rv">
                 <div class="case-head">
-                    <span class="case-num">04</span>
+                    <span class="case-num">05</span>
                     <span class="case-state" data-i18n="statusOnline">Live</span>
                 </div>
                 <h3 class="case-name">Mundial 2026</h3>
@@ -494,7 +523,7 @@
             </div>
         </article>
 
-        <!-- 05 · Ronda -->
+        <!-- 06 · Ronda -->
         <article class="case">
             <figure class="case-shot rv">
                 <div class="frame">
@@ -504,7 +533,7 @@
             </figure>
             <div class="case-body rv">
                 <div class="case-head">
-                    <span class="case-num">05</span>
+                    <span class="case-num">06</span>
                     <span class="case-state" data-i18n="statusDemo">Demo</span>
                 </div>
                 <h3 class="case-name">Ronda</h3>
@@ -670,10 +699,10 @@ const I18N = {
         stripRole:'Role', stripRoleV:'Software Developer · U.D.C.A',
         stripSince:'Since', stripSinceV:'January 2025',
         stripStack:'Core stack',
-        stripShipped:'Shipped', stripShippedV:'5 apps online · 5 SII modules',
+        stripShipped:'Shipped', stripShippedV:'6 apps online · 5 SII modules',
 
         workTag:'Case studies', workTitle:'What I built, and <span>why</span>',
-        workSub:'Five products, from the first commit to production. Every screenshot below is the real app — click and try it yourself.',
+        workSub:'Six products, from the first commit to production. Every screenshot below is the real app — click and try it yourself.',
         kProblem:'The problem', kDid:'What I did', kResult:'The result',
         statusDev:'In development', statusDemo:'Demo', statusLive:'Live · Founder', statusOnline:'Live',
 
@@ -689,6 +718,10 @@ const I18N = {
         cpProb:'Support teams read hundreds of tickets a day with no way to tell which customer is about to leave.',
         cpDid:'Google Gemini reads every ticket and returns <b>sentiment, frustration level, churn risk and priority</b>, feeding a live dashboard.',
         cpRes:'A multi-tenant SaaS with data isolated per client, JWT authentication and role-based access control.',
+
+        lcProb:'At a party, bets are made out loud: nobody remembers who said what, and even less who ended up paying the forfeit.',
+        lcDid:'Live bets from your phone: someone opens one, sets the sides and the forfeit, and everyone picks against the clock. No sign-up, no install.',
+        lcRes:"The clock and the closing run <b>in the database, not in the browser</b>, so nobody wins by changing the time on their phone. Votes stay hidden until the bet closes, and whoever doesn't vote pays too.",
 
         mdProb:'Following the World Cup means jumping between one site for results, another for groups and another for top scorers.',
         mdDid:'A single dashboard with live results, KPIs, groups, the full fixture and the knockout bracket, built with SVG connectors computed between rounds.',
@@ -730,10 +763,10 @@ const I18N = {
         stripRole:'Cargo', stripRoleV:'Desarrollador de Software · U.D.C.A',
         stripSince:'Desde', stripSinceV:'Enero de 2025',
         stripStack:'Stack principal',
-        stripShipped:'Publicado', stripShippedV:'5 apps en línea · 5 módulos del SII',
+        stripShipped:'Publicado', stripShippedV:'6 apps en línea · 5 módulos del SII',
 
         workTag:'Casos', workTitle:'Lo que construí, y <span>por qué</span>',
-        workSub:'Cinco productos, del primer commit a producción. Cada captura de abajo es la app real — entra y pruébala.',
+        workSub:'Seis productos, del primer commit a producción. Cada captura de abajo es la app real — entra y pruébala.',
         kProblem:'El problema', kDid:'Lo que hice', kResult:'El resultado',
         statusDev:'En desarrollo', statusDemo:'Demo', statusLive:'En vivo · Fundador', statusOnline:'En vivo',
 
@@ -749,6 +782,10 @@ const I18N = {
         cpProb:'Los equipos de soporte leen cientos de tickets al día sin forma de saber cuál cliente está a punto de irse.',
         cpDid:'Google Gemini lee cada ticket y devuelve <b>sentimiento, nivel de frustración, riesgo de fuga y prioridad</b>, alimentando un dashboard en vivo.',
         cpRes:'Un SaaS multi-tenant con los datos aislados por cliente, autenticación JWT y control de acceso por roles.',
+
+        lcProb:'En una fiesta las apuestas se arman de palabra: nadie recuerda quién dijo qué, y menos quién terminó pagando la penitencia.',
+        lcDid:'Apuestas en vivo desde el celular: alguien la abre, define los bandos y la penitencia, y todos eligen contra reloj. Sin registro ni instalación.',
+        lcRes:'El reloj y el cierre corren <b>en la base de datos, no en el navegador</b>, así que nadie gana cambiándole la hora al teléfono. Los votos quedan ocultos hasta que cierra la apuesta, y el que no vota también paga.',
 
         mdProb:'Seguir el Mundial obliga a saltar entre un sitio para los resultados, otro para los grupos y otro para los goleadores.',
         mdDid:'Un solo tablero con resultados en vivo, KPIs, grupos, el fixture completo y el bracket eliminatorio, con conectores SVG calculados entre rondas.',
